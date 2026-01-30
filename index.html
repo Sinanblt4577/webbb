@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blogger Tarzı Basit Blog</title>
+  <style>
+    body{margin:0;font-family:Arial, sans-serif;background:#f4f4f4;color:#222}
+    header{background:#ff5722;color:#fff;padding:20px;text-align:center}
+    nav{background:#222;padding:10px;text-align:center}
+    nav a{color:#fff;text-decoration:none;margin:0 10px;font-weight:bold}
+    nav a:hover{color:#ffccbc}
+    .container{max-width:1000px;margin:20px auto;display:flex;gap:15px;padding:0 10px}
+    .posts{flex:3}
+    .sidebar{flex:1;background:#fff;padding:15px;border-radius:10px}
+    .post{background:#fff;padding:15px;margin-bottom:15px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.08)}
+    .post h2{margin:0;color:#ff5722}
+    .meta{font-size:13px;color:#777;margin:6px 0 10px}
+    .readmore{display:inline-block;margin-top:8px;color:#ff5722;font-weight:bold;text-decoration:none}
+    .readmore:hover{text-decoration:underline}
+    footer{text-align:center;padding:15px;color:#777}
+    input{width:100%;padding:10px;border:1px solid #ddd;border-radius:8px}
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📝 Benim Blogum</h1>
+    <p>Blogger tarzı basit blog şablonu</p>
+  </header>
+
+  <nav>
+    <a href="#">Anasayfa</a>
+    <a href="#">Yazılar</a>
+    <a href="#">Hakkımda</a>
+    <a href="#">İletişim</a>
+  </nav>
+
+  <div class="container">
+    <!-- Yazılar -->
+    <div class="posts">
+      <div class="post">
+        <h2>İlk Blog Yazım</h2>
+        <div class="meta">30 Ocak 2026 · Kategori: Genel</div>
+        <p>Bu, Blogger tarzı çok basit bir blog arayüzü örneğidir. Burada yazılar listelenir.</p>
+        <a class="readmore" href="#" onclick="alert('Detay sayfası yok (örnek).')">Devamını oku →</a>
+      </div>
+
+      <div class="post">
+        <h2>HTML Öğrenmeye Başlamak</h2>
+        <div class="meta">29 Ocak 2026 · Kategori: Web</div>
+        <p>HTML semantik etiketler, form elemanları ve temel sayfa düzeni gibi konularla başlayabilirsin.</p>
+        <a class="readmore" href="#" onclick="alert('Detay sayfası yok (örnek).')">Devamını oku →</a>
+      </div>
+
+      <div class="post">
+        <h2>Kulüp Etkinliği Duyurusu</h2>
+        <div class="meta">28 Ocak 2026 · Kategori: Etkinlik</div>
+        <p>Bu hafta mini hackathon yapıyoruz! Katılmak için iletişim kısmından bize yaz.</p>
+        <a class="readmore" href="#" onclick="alert('Detay sayfası yok (örnek).')">Devamını oku →</a>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>🔎 Ara</h3>
+      <input type="text" placeholder="Yazılarda ara..." oninput="filterPosts(this.value)" />
+
+      <hr style="border:none;border-top:1px solid #eee;margin:15px 0">
+
+      <h3>📌 Kategoriler</h3>
+      <ul>
+        <li>Genel</li>
+        <li>Web</li>
+        <li>Etkinlik</li>
+      </ul>
+
+      <hr style="border:none;border-top:1px solid #eee;margin:15px 0">
+
+      <h3>👤 Hakkımda</h3>
+      <p>Ben bir yazılım meraklısıyım. Bu blogda öğrendiklerimi paylaşıyorum.</p>
+    </aside>
+  </div>
+
+  <footer>
+    © 2026 Benim Blogum · Blogger tarzı basit şablon
+  </footer>
+
+  <script>
+    // Basit arama (yazı başlığında ve paragrafta geçen kelimeye göre filtreler)
+    function filterPosts(q) {
+      q = (q || "").toLowerCase();
+      const posts = document.querySelectorAll(".post");
+      posts.forEach(post => {
+        const text = post.innerText.toLowerCase();
+        post.style.display = text.includes(q) ? "block" : "none";
+      });
+    }
+  </script>
+
+</body>
+</html>
